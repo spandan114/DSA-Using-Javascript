@@ -60,3 +60,43 @@ function numberOfHalves(n) {
   return count;
 }
 //O(log(n))
+
+//BIG O OF OBJECTs
+
+// Insertion -   O(1)
+// Removal -   O(1)
+// Searching -   O(N)
+// Access -   O(1)
+
+//object methods
+
+// Object.keys -   O(N)
+// Object.values -   O(N)
+// Object.entries -   O(N)
+// hasOwnProperty -   O(1)
+
+let instructor = {
+  firstName: "spandan",
+  isInstructor: true,
+  favoriteNumbers: [1,2,3,4]
+}
+
+//BIG O OF ARRAYs
+
+// Insertion -   It depends....
+// Removal -   It depends....
+// Searching -   O(N)
+// Access -   O(1)
+
+// push -   O(1)
+// pop -   O(1)
+// shift -   O(N)
+// unshift -   O(N)
+// concat -   O(N)
+// slice -   O(N)
+// splice -   O(N)
+// sort -   O(N * log N)
+// forEach/map/filter/reduce/etc. -   O(N)
+
+let names = ["Michael", "Melissa", "Andrea"];
+let values = [true, {}, [], 2, "awesome"];
