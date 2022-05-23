@@ -31,3 +31,26 @@ function binarySearch(arr, elem) {
 }
 
 binarySearch([2,5,6,9,13,15,28,30], 103)
+
+// Recursion version
+function binarySearchHelper(arr,start,end,elem){
+    console.log(arr,start,end,elem)
+    middle = Math.floor((start + end) / 2);
+    if(arr[middle] === elem){
+        return middle
+    }else if(elem < arr[middle]){
+        var end = middle - 1;
+        return binarySearchHelper(arr,start,end,elem)
+    }else {
+        var start = middle + 1;
+        return binarySearchHelper(arr,start,end,elem)
+    }
+}
+
+function binarySearch(arr, elem) {
+    var start = 0;
+    var end = arr.length - 1;
+    return binarySearchHelper(arr,start,end,elem)
+}
+
+console.log(binarySearch([2,5,6,9,13,15,17,20,24,28,29,30], 28))

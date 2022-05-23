@@ -1,18 +1,19 @@
-// UNOPTIMIZED VERSION OF BUBBLE SORT
-function bubbleSort(arr){
-  for(var i = arr.length; i > 0; i--){
-    for(var j = 0; j < i - 1; j++){
-      console.log(arr, arr[j], arr[j+1]);
-      if(arr[j] > arr[j+1]){
-        var temp = arr[j];
-        arr[j] = arr[j+1];
-        arr[j+1] = temp;         
+// UN-OPTIMIZED VERSION OF BUBBLE SORT
+const bubbleSort = (array)=>{
+  for(var i=0;i<array.length;i++){
+      for(var j=0;j< array.length;j++){
+          if(array[i] < array[j]){
+              var temp = array[i];
+              array[i]=array[j]
+              array[j]=temp
+          }
       }
-    }
   }
-  return arr;
+  return array
 }
 
+
+// OPTIMIZED VERSION OF BUBBLE SORT
 // ES2015 Version
 function bubbleSort(arr) {
   const swap = (arr, idx1, idx2) => {
