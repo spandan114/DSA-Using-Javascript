@@ -144,3 +144,67 @@ console.log(findCommonElem(arr1,arr2,arr3))
  }
  
  console.log(findTriplet([1,2,3,4,5,6,7,8],8))
+
+ /**
+  *  Move to one side problem
+  */
+
+  const moveToOneSide = (array) =>{
+    if(array.length < 1){
+        return 'Length issue'
+    }
+
+    var readStream = array.length-1
+    var writeStream = array.length-1
+
+    while(readStream >= 0){
+        
+        console.log({readStream,writeStream})
+        
+       if(array[readStream] !== 0){
+           // w -> update
+           array[writeStream] = array[readStream]
+           // w =  -1
+           writeStream -= 1 ;
+       }
+       // r = -1
+       readStream -= 1;
+    }
+    while(writeStream >= 0){
+       array[writeStream] = 0;
+       writeStream -= 1 ;
+    }
+   return array
+}
+
+console.log(moveToOneSide([1,3,4,0,2,0,5,0]))
+
+/**
+ *  Max/Min sell problem
+ */
+
+const maxSell = (array) =>{
+    if(array.length < 1){
+        return 'Length issue'
+    }
+
+    var globalBuy = array[0];
+    var globalSell = array[0];
+    var globalProfit = 0;
+
+    array.map(value=>{
+        if(value < globalBuy){
+            globalBuy = value
+        }
+
+        var currentProfit = value - globalProfit
+        if(currentProfit > globalProfit){
+            globalProfit = currentProfit;
+            globalSell  = value
+        }
+
+    })
+    return {buy:globalBuy,sell:globalSell,profit:globalProfit}
+}
+
+console.log(maxSell([8,9,10,5,4,2,12,18,11]))
